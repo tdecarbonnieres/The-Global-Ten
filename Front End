@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 10 Daily Challenge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Top 10 Daily Challenge</h1>
+    <p>Players have 5 lives to find all top 10 answers.</p>
+    <p class="small">Admin? Open <code>/admin.html</code> and log in.</p>
+  </header>
+
+  <main class="layout single">
+    <section class="card game-panel">
+      <h2>Player Game</h2>
+      <p id="today-label"></p>
+      <h3 id="daily-question">Loading today's question...</h3>
+
+      <div id="hud">
+        <div>
+          <strong>Lives:</strong>
+          <span id="lives-display">❤️❤️❤️❤️❤️</span>
+        </div>
+        <div>
+          <strong>Found:</strong>
+          <span id="found-count">0 / 10</span>
+        </div>
+      </div>
+
+      <form id="guess-form">
+        <label for="guess-input">Your answer</label>
+        <input id="guess-input" type="text" placeholder="Type your guess" autocomplete="off" />
+        <button type="submit">Submit guess</button>
+      </form>
+
+      <p id="feedback" class="status"></p>
+      <ol id="answer-board"></ol>
+
+      <section id="results" class="hidden">
+        <h3>Round Summary</h3>
+        <canvas id="results-chart" width="640" height="320" aria-label="Performance chart"></canvas>
+        <ul id="summary-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="player.js"></script>
+</body>
+</html>
