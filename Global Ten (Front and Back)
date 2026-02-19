@@ -10,10 +10,38 @@
   <header>
     <h1>Top 10 Daily Challenge</h1>
     <p>Players have 5 lives to find all top 10 answers.</p>
-    <p class="small">Admin? Open <code>/admin.html</code> and log in.</p>
+    <p class="small">Host mode: open <code>/?admin=1</code> and log in.</p>
   </header>
 
   <main class="layout single">
+    <section class="card host-panel hidden" id="admin-root">
+      <h2>Admin Host Controls</h2>
+
+      <div id="login-panel">
+        <form id="login-form">
+          <label for="admin-password">Password</label>
+          <input id="admin-password" type="password" required />
+          <button type="submit">Login</button>
+        </form>
+        <p id="login-status" class="status"></p>
+      </div>
+
+      <div id="host-panel" class="hidden">
+        <form id="host-form">
+          <label for="host-question">Question of the day</label>
+          <input id="host-question" type="text" required />
+
+          <fieldset>
+            <legend>Top 10 ranked answers</legend>
+            <div id="answers-grid"></div>
+          </fieldset>
+
+          <button type="submit">Publish Today's Question</button>
+        </form>
+        <p id="host-status" class="status"></p>
+      </div>
+    </section>
+
     <section class="card game-panel">
       <h2>Player Game</h2>
       <p id="today-label"></p>
@@ -47,6 +75,6 @@
     </section>
   </main>
 
-  <script src="player.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
